@@ -23,8 +23,10 @@ website:
   page-navigation: true
   title: "IS381 Statistics and Probability with R"
   description: "CUNY School of Professional Studies"
-  site-url: "https://github.com"
+  # TODO: Update for each semester
+  site-url: "https://jbryer.github.com/IS381"
 
+# TODO: Update for each semester
   repo-url: https://github.com/jbryer/IS381/
   repo-subdir: website
   repo-branch: master
@@ -38,7 +40,6 @@ website:
     background: "#325A89"
 
   sidebar:
-    # background: "#325A89"
     background: "#eeeeee"
     logo: "course_logo.png" # TODO: Replace with course logo
     pinned: true
@@ -60,11 +61,13 @@ website:
           - text: IMS2
             url: https://openintro-ims.netlify.app
             target: _blank
+# TODO: Update for each semester
       - icon: github
         href: https://github.com/jbryer/IS381
         text: "Github"
         target: _blank
-      # - icon: slack
+# TODO: Update for each semester
+        # - icon: slack
       #   href: https://dav5300spring2025.slack.com
       #   text: "Slack"
       - icon: link-45deg
@@ -79,6 +82,7 @@ website:
           - text: CUNYfirst
             url: https://cunyfirst.cuny.edu
             target: _blank
+# TODO: Update for new instructor
       - icon: envelope
         text: "Email"
         url: mailto:jason.bryer@cuny.edu?subject=IS381
@@ -87,19 +91,19 @@ website:
     search: true
     collapse-level: 2
     contents:
-      - href: "index.qmd"
+      - href: index.qmd
         text: "Announcements"
-      - href: "schedule.qmd"
+      - href: schedule.qmd
         text: "Schedule"
       - section: "Course information"
         contents:
-          - href: "syllabus.qmd"
+          - href: syllabus.qmd
             text: "Syllabus"
-          - href: "instructor.qmd"
+          - href: instructor.qmd
             text: "Instructor"
-          - href: "assignments/project.qmd"
+          - href: project.qmd
             text: "Data Project"
-          - href: "software.qmd"
+          - href: software.qmd
             text: "Software"
       - section: "Topics"
         contents:

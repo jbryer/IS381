@@ -2,7 +2,7 @@ on:
   push:
     branches: [main, master]
 
-name: Render and Publish Quarto WEbsite
+name: Render and Publish Quarto Website
 
 permissions:
     contents: write

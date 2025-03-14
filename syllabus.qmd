@@ -13,13 +13,12 @@ source('config.R')
 ```
 
 **COURSE NAME AND NUMBER:** IS381 Statistics and Probability with R  
-**SEMSTER:**  
+**SEMSTER:** `r semester` `r year`  
 **CREDITS:** 3  
 **PREREQUISITE(S):** IS 210, IS 211, IS 361 AND IS 362  
 
-**INSTRUCTOR:**  
-**EMAIL:**  
-**GITHUB:**  
+**INSTRUCTOR:** `r instructor`  
+**EMAIL:** [`r instructor_email`](mailto:`r paste0(instructor_email, '?subject=', course)`)  
 **OFFICE HOURS:**  
 
 
@@ -58,11 +57,11 @@ cat(paste0('* ', plo[plo$ID %in% plos,]$Learning_Outcome, collapse = '\n'))
 
 ### REQUIRED TEXTBOOKS:
 
-*Open Intro Statistics 4th Edition* by David Diez, Mine Çetinkaya-Rundel and Christopher D Barr. Available for free at [https://openintro.org](https://openintro.org)
+* *Open Intro Statistics 4th Edition* by David Diez, Mine Çetinkaya-Rundel and Christopher D Barr. Available for free at [https://openintro.org](https://openintro.org)
 
-*Introduction to Modern Statistics* by Mine Çetinkaya-Rundel and Johanna Hardin. Available for free at [https://openintro-ims.netlify.app](https://openintro-ims.netlify.app)
+* *Introduction to Modern Statistics* by Mine Çetinkaya-Rundel and Johanna Hardin. Available for free at [https://openintro-ims.netlify.app](https://openintro-ims.netlify.app)
 
-*R for Data Science 2nd edition* by Hadley Wickham, Mine Çetinkaya-Runde, and Garrett Grolemund. Available for free at. [https://r4ds.hadley.nz](https://r4ds.hadley.nz)
+* *R for Data Science 2nd edition* by Hadley Wickham, Mine Çetinkaya-Runde, and Garrett Grolemund. Available for free at. [https://r4ds.hadley.nz](https://r4ds.hadley.nz)
 
 ### ADDITIONAL RESOURCES:
 

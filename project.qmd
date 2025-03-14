@@ -8,7 +8,7 @@ The purpose of the data project is for you to conduct a reproducible analysis wi
 
 ```{r, echo=FALSE, results='asis'}
 options(knitr.kable.NA = '')
-rubric <- readxl::read_excel('Data_Project_Rubric.xlsx')
+rubric <- readxl::read_excel('assignments/Data_Project_Rubric.xlsx')
 rubric |>
 	knitr::kable(format = 'html',
 				 escape = FALSE)

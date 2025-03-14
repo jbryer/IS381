@@ -20,7 +20,7 @@ Welcome to IS38! Couple of important notes as you get started:
 
 * [Join the Slack channel by clicking here](`r slack_invite_link`) (or use your @sps.cuny.edu email address). This will be our primary mode of communication. 
 
-* For private communications, you can either send private Slack messages or email me at [jason.bryer@cuny.edu,](mailto:jason.bryer@cuny.edu?subject=DATA606).
+* For private communications, you can either send private Slack messages or email me at [`r instructor_email`](mailto:`r paste0(instructor_email, '?subject=', course)`).
 
 * Complete the self-regulated learning assessment in DAACS. Visit [cuny.daacs.net](https://cuny.daacs.net) and sign-in using your CUNY acocunt.
 
