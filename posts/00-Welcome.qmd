@@ -1,0 +1,29 @@
+---
+title: "Welcome to IS381!"
+author: "Jason Bryer"
+date: "2025-03-13"
+image: "00-welcome.png"
+description: "Important information on how to get started with this course. Please read this post carefully."
+---
+
+```{r, eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
+source('../config.R')
+meetup_image(out_file = '00-welcome.png',
+			 title = 'Welcome to IS381!',
+			 date = ' ')
+```
+
+
+Welcome to IS38! Couple of important notes as you get started:
+
+* Complete this [Google Form](`r formative_assessment`) as soon as possible. I will use some of the data (in aggregate) in the meetup.
+
+* [Join the Slack channel by clicking here](`r slack_invite_link`) (or use your @sps.cuny.edu email address). This will be our primary mode of communication. 
+
+* For private communications, you can either send private Slack messages or email me at [jason.bryer@cuny.edu,](mailto:jason.bryer@cuny.edu?subject=DATA606).
+
+* Complete the self-regulated learning assessment in DAACS. Visit [cuny.daacs.net](https://cuny.daacs.net) and sign-in using your CUNY acocunt.
+
+* Our Meetups will be on XXX from X:00pm to X:00pm. **I expect everyone to attend or watch the Meetups.** Important information will be shared during the meetups that will not be available in any other format.
+
+I am looking forward to getting to know everyone and a fantastic semester! Good luck!

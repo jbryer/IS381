@@ -1,0 +1,13 @@
+---
+title: "Correlation"
+---
+
+## Readings
+
+[Intro to Modern Statistics chapter 7.1](https://openintro-ims.netlify.app/model-slr)
+
+## Assignments
+
+[Correlation Lab](/assignments/14_Correlation.zip)
+
+## Additional Resources

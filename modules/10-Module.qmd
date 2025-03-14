@@ -1,0 +1,14 @@
+---
+title: "Inference for Proportions"
+---
+
+
+## Readings
+
+OpenIntro Statistics chapter 6
+
+## Assignments
+
+[Inference for Proportions Lab](/assignments/10_Inference_for_Categorical_Data.zip)
+
+## Additional Resources

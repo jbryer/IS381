@@ -1,0 +1,13 @@
+---
+title: "Foundation for inference"
+---
+
+## Readings
+
+OpenIntro Statistics chapter 5
+
+## Assignments
+
+[Sampling Distribution Lab](/assignments/08_Sampling_Distributions.zip)
+
+## Additional Resources

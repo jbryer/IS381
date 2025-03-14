@@ -1,0 +1,16 @@
+---
+title: "Probability"
+---
+
+
+## Readings
+
+OpenIntro Statistics chapter 3
+
+## Assignments
+
+[Probability Lab](/assignments/06_Probability.zip)
+
+## Additional Resources
+
+

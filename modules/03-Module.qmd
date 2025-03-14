@@ -1,0 +1,13 @@
+---
+title: "Data (importing and structure)"
+---
+
+## Readings
+
+[R for Data Science chapter 7](https://r4ds.hadley.nz/data-import.html)
+
+## Assignments
+
+[Data importing and structore lab](/assignments/03_Data.zip)
+
+## Additional Resources

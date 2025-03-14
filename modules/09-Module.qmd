@@ -1,0 +1,14 @@
+---
+title: "Central limit theorem"
+---
+
+## Readings
+
+[Intro to Modern Statistics chapter 13](https://openintro-ims.netlify.app/foundations-mathematical)
+
+## Assignments
+
+[Confidence Intervals Lab](/assignments/09_Confidence_Intervals.zip)
+
+## Additional Resources
+

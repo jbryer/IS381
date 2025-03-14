@@ -1,0 +1,13 @@
+---
+title: "R coding basics"
+---
+
+## Readings
+
+R four Data Science [chapter 2](https://r4ds.hadley.nz/workflow-basics.html) and [chapter 3](https://r4ds.hadley.nz/data-transform.html)
+
+## Assignments
+
+[R Coding Basics](/assignments/02_R_Coding_Basics.zip)
+
+## Additional Resources

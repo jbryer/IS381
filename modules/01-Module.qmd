@@ -1,0 +1,20 @@
+---
+title: "Introduction to R and RStudio"
+---
+
+The first thing you should do for this class is install R and RStudio. The [software](/software.html) page has directions for install R and RStudio.
+
+## Readings
+
+R for Data Science [introduction](https://r4ds.hadley.nz/intro.html) and [chapter 27](https://r4ds.hadley.nz/base-R.html).
+
+## Assignments
+
+[Intro to R Lab](/assignments/01_Intro_to_R.zip)
+
+
+## Additional Resources
+
+
+{{< video https://www.youtube.com/watch?v=kfcX5DEMAp4&t=36s >}}
+

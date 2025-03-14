@@ -1,0 +1,13 @@
+---
+title: "Analysis of Variance"
+---
+
+## Readings
+
+[Intro to Modern Statistics chapter 22](https://openintro-ims.netlify.app/inference-many-means)
+
+## Assignments
+
+[ANOVA Lab](/assignments/13_ANOVA.zip)
+
+## Additional Resources

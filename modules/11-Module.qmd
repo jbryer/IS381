@@ -1,0 +1,13 @@
+---
+title: "Inference for Two-Way Tables"
+---
+
+## Readings
+
+[Intro to Modern Statistics](https://openintro-ims.netlify.app/inference-tables)
+
+## Assignments
+
+[Chi-Squared Lab](/assignments/11_Chi_Squared.zip)
+
+## Additional Resources

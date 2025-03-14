@@ -1,0 +1,13 @@
+---
+title: "Inference for Numerical Data"
+---
+
+## Readings
+
+OpenIntro Statistics chapter 7
+
+## Assignments
+
+[Inference for Numerical Data Lab](/assignments/12_Inference_for_Numerical_Data.zip)
+
+## Additional Resources

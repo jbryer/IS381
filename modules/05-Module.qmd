@@ -1,0 +1,18 @@
+---
+title: "Reshaping Data"
+---
+
+## Readings
+
+R for Data Science [chapter 3](https://r4ds.hadley.nz/data-transform.html) and the [transform section](https://r4ds.hadley.nz/transform.html).
+
+## Assignments
+
+[Reshaping Data Lab](/assignments/05_Reshaping_Data.zip)
+
+## Additional Resources
+
+* [dplyr cheatsheet](https://nyu-cdsc.github.io/learningr/assets/data-transformation.pdf)
+
+* [dplyr website](https://dplyr.tidyverse.org)
+

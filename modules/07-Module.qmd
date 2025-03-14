@@ -1,0 +1,13 @@
+---
+title: "Distributions"
+---
+
+## Readings
+
+OpenIntro Statistics chapter 4
+
+## Assignments
+
+[Distributions Lab](/assignments/07_Distributions.zip)
+
+## Additional Resources

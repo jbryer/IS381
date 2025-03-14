@@ -1,0 +1,153 @@
+project:
+  type: website
+  output-dir: "docs/"
+  render:
+  - "*.qmd"
+  - "!resources/"
+  - "!common/"
+  - "!slides/"
+ - "!assignments/"
+  post-render:
+    - "cp -rf resources/ docs/resources/"
+    - "cp -rf assignments/ docs/assignments/"
+    - "cp -rf slides/ docs/slides/"
+
+website:
+  # announcement:
+  #   content: "[Click here](https://join.slack.com/t/dav5300spring2025/shared_invite/zt-2yja0zs7k-GCJTqNKlLNgYYmetdl~OMw) to the join the Slack channel."
+  #   # position: below-navbar # above-navbar or below-navbar
+  #   icon: slack #info-circle # https://icons.getbootstrap.com
+  #   dismissable: false
+  #   type: primary # primary, secondary, success, danger, warning, info, light, dark
+
+  page-navigation: true
+  title: "IS381 Statistics and Probability with R"
+  description: "CUNY School of Professional Studies"
+  site-url: "https://github.com"
+
+  repo-url: https://github.com/jbryer/IS381/
+  repo-subdir: website
+  repo-branch: master
+  repo-actions: [edit, issue]
+
+  open-graph: true
+
+  page-footer:
+    # right: ""
+    # left: ""
+    background: "#325A89"
+
+  sidebar:
+    # background: "#325A89"
+    background: "#eeeeee"
+    logo: "course_logo.png" # TODO: Replace with course logo
+    pinned: true
+    align: center
+    # List of available icons: https://icons.getbootstrap.com
+    tools:
+      - icon: calendar-check
+        href: schedule.qmd
+        text: "Schedule"
+      - icon: book
+        text: "Textbooks"
+        menu:
+          - text: OpenIntro Stats
+            url: resources/OpenIntroStatistics.pdf
+            target: _blank
+          - text: R4DS
+            url: https://r4ds.hadley.nz
+            target: _blank
+          - text: IMS2
+            url: https://openintro-ims.netlify.app
+            target: _blank
+      - icon: github
+        href: https://github.com/jbryer/IS381
+        text: "Github"
+        target: _blank
+      # - icon: slack
+      #   href: https://dav5300spring2025.slack.com
+      #   text: "Slack"
+      - icon: link-45deg
+        text: "CUNY"
+        menu:
+          - text: Brightspace LMS
+            url: https://brightspace.cuny.edu
+            target: _blank
+          - text: MSDS Program Page
+            url: https://sps.cuny.edu/academics/graduate/master-science-data-science-ms
+            target: _blank
+          - text: CUNYfirst
+            url: https://cunyfirst.cuny.edu
+            target: _blank
+      - icon: envelope
+        text: "Email"
+        url: mailto:jason.bryer@cuny.edu?subject=IS381
+
+    style: "docked"
+    search: true
+    collapse-level: 2
+    contents:
+      - href: "index.qmd"
+        text: "Announcements"
+      - href: "schedule.qmd"
+        text: "Schedule"
+      - section: "Course information"
+        contents:
+          - href: "syllabus.qmd"
+            text: "Syllabus"
+          - href: "instructor.qmd"
+            text: "Instructor"
+          - href: "assignments/project.qmd"
+            text: "Data Project"
+          - href: "software.qmd"
+            text: "Software"
+      - section: "Topics"
+        contents:
+          - href: modules/01-Module.qmd
+            text: "1 - Introduction to R and RStudio"
+          - href: modules/02-Module.qmd
+            text: "2 - R coding basics"
+          - href: modules/03-Module.qmd
+            text: "3 - Data (importing and structure)"
+          - href: modules/04-Module.qmd
+            text: "4 - Reshaping data"
+          - href: modules/05-Module.qmd
+            text: "5 - Data visualization with ggplot2"
+          - href: modules/06-Module.qmd
+            text: "6 - Probability"
+          - href: modules/07-Module.qmd
+            text: "7 - Distributions"
+          - href: modules/08-Module.qmd
+            text: "8 - Foundation for inference"
+          - href: modules/09-Module.qmd
+            text: "9 - Central limit theorem"
+          - href: modules/10-Module.qmd
+            text: "10 - Inference for proportions"
+          - href: modules/11-Module.qmd
+            text: "11 - Inference for two-way tables"
+          - href: modules/12-Module.qmd
+            text: "12 - Inference for numerical data"
+          - href: modules/13-Module.qmd
+            text: "13 - Analysis of variance"
+          - href: modules/14-Module.qmd
+            text: "14 - Correlation"
+          - href: modules/15-Module.qmd
+            text: "15 - Wrap up / Final Presentations"
+
+format:
+  html:
+    theme:
+      light: [cosmo, theme.scss]
+      dark: [cosmo, theme-dark.scss]
+    mainfont: "Atkinson Hyperlegible"
+    code-copy: true
+    code-overflow: wrap
+    toc: false
+    # include-in-header:
+    #   text: |
+    #     <link href="/fullcalendar-lib/main.css" rel="stylesheet" />
+    #     <script type="text/javascript" src="/fullcalendar-lib/main.js"></script>
+
+freeze: auto
+
+editor: source

@@ -1,0 +1,38 @@
+
+``` r
+source('config.R')
+```
+
+## IS381 Statistics and Probability with R
+
+#### Instructions for setting course site for new semester
+
+1.  Update [\_quarto.yml](_quarto.yml) website configuration file.
+
+2.  Update [config.R](config.R) configuration file.
+
+3.  Create a course logo.
+
+``` r
+library(hexSticker)
+sticker(
+    subplot = 'images/CUNY_SPS_Logo.png',
+    package = paste0(course, ' ', semester, ' ', year),
+    # filename = paste0(sub(' ', '', course), '-', semester, year, '.png'),
+    filename = 'course_logo.png',
+    p_x = 1, p_y = 1.45, p_size = 12, p_color = cuny_colors[1], 
+    s_x = 1, s_y = .85, s_width=0.8, s_height = 0.8,
+    h_color = cuny_colors[1],
+    h_fill = 'white',# cuny_colors[4],
+    spotlight = FALSE,
+    # url = paste0(),
+    u_size = 4.9,
+    u_color = cuny_colors[2],
+    white_around_sticker = FALSE
+)
+```
+
+#### Useful links
+
+[CUNY branding
+guidelines](https://www.cuny.edu/wp-content/uploads/sites/4/page-assets/about/administration/offices/communications-marketing/university-identity/campus-logos/28283961_2-CUNY-SPS-Style-guide_110221_onepgr-2.pdf)
