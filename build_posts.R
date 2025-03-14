@@ -1,3 +1,5 @@
+source('config.R')
+
 meetups <- readxl::read_excel('Schedule.xlsx', sheet = 'Schedule')
 for(i in 1:nrow(meetups)) {
 	if(!is.na(meetups[i,]$Slides) | !is.na(meetups[i,]$Video)) {

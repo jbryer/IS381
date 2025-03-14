@@ -1,7 +1,7 @@
 # This script is used for the Github action for building the course site. However, it is useful
 # for install the required R packages for this course.
 
-install.packages(c(
+pkgs <- c(
 	'cowplot',
 	'devtools',
 	'knitr',
@@ -17,6 +17,22 @@ install.packages(c(
 	'rmarkdown',
 	'tidyverse',
 	'wordcloud'
-))
+)
 
-remotes::install_github('jbryer/VisualStats')
+github_pkgs <- c(
+	'jbryer/VisualStats'
+)
+
+for(i in pkgs) {
+	if(!require(i)) {
+		install.packages(i)
+	}
+}
+
+for(i in pkgs) {
+	pkg <- strsplit(i, '/')[[1]][2]
+	if(!require(pkg)) {
+		remotes::install_github(i)
+	}
+}
+
