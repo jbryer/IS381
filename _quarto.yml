@@ -53,17 +53,8 @@ website:
         href: schedule.qmd
         text: "Schedule"
       - icon: book
+        href: textbooks.qmd
         text: "Textbooks"
-        menu:
-          - text: OpenIntro Stats
-            url: resources/OpenIntroStatistics.pdf
-            target: _blank
-          - text: R4DS
-            url: https://r4ds.hadley.nz
-            target: _blank
-          - text: IMS2
-            url: https://openintro-ims.netlify.app
-            target: _blank
 # TODO: Update for each semester
       - icon: github
         href: https://github.com/jbryer/IS381
