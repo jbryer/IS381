@@ -1,6 +1,6 @@
 ---
 title: "Introduction to R and RStudio"
-date: 2025-03-13
+date: 2025-03-14
 draft: false
 description: "Slides and recording for the *Introduction to R and RStudio* meetup."
 categories: ["Meetups"]
@@ -8,7 +8,7 @@ image: "01-Introduction_to_R_and_RStudio.png"
 ---
 
 
-[Click here](/slides/00-Intro_to_Course.html#1) to open the slides ([PDF](/slides/00-Intro_to_Course.pdf)).
+[Click here](/slides/00-Intro_to_Course.html#1) to open the slides.
 
 
 

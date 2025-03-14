@@ -9,7 +9,7 @@ project:
   - "!assignments/"
   pre-render:
     # - build_pdf_slides.R
-    - build_posts.R
+    # - build_posts.R
   post-render:
     - "cp -rf resources/ docs/resources/"
     - "cp -rf assignments/ docs/assignments/"

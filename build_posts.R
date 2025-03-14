@@ -1,18 +1,30 @@
 source('config.R')
 
+slides_dir <- 'slides'
+posts_dir <- 'posts'
+
 meetups <- readxl::read_excel('Schedule.xlsx', sheet = 'Schedule')
 for(i in 1:nrow(meetups)) {
 	if(!is.na(meetups[i,]$Slides) | !is.na(meetups[i,]$Video)) {
-		blogfile <- paste0('posts/', stringr::str_pad(meetups[i,]$Week, 2, pad = "0"), '-',
+		blogfile <- paste0(posts_dir, '/', stringr::str_pad(meetups[i,]$Week, 2, pad = "0"), '-',
 						   gsub(' ', '_', meetups[i,]$Topic),
 						   '.qmd')
 
 		blogcontent <- ''
 		if(!is.na(meetups[i,]$Slides)) {
-			blogcontent <- paste0(blogcontent, '[Click here](/slides/', meetups[i,]$Slides, '.html#1) to open the slides ([PDF](/slides/', meetups[i,]$Slides, '.pdf)).\n\n')
+			blogcontent <- paste0(blogcontent, '[Click here](/', slides_dir, '/', meetups[i,]$Slides, '.html#1) to open the slides')
+			pdf_slide <- paste0(slides_dir, '/', meetups[i,]$Slides)
+			if(file.exists(pdf_slide)) {
+				blogcontent <- paste0(blogcontent, '([PDF](/', slides_dir, '/', meetups[i,]$Slides, '.pdf))')
+			}
+			blogcontent <- paste0(blogcontent, '.\n\n')
 		}
 		if(!is.na(meetups[i,]$Video)) {
-			blogcontent <- paste0(blogcontent, '<iframe width="560" height="315" src="https://www.youtube.com/embed/', meetups[i,]$Video, '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
+			blogcontent <- paste0(
+				blogcontent,
+				'<iframe width="560" height="315" src="https://www.youtube.com/embed/',
+				meetups[i,]$Video,
+				'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
 		}
 
 		additionalcontent <- ''

@@ -1,24 +1,10 @@
-tocopy <- c(list.files('slides', pattern = '.html'),
-			list.dirs('slides', recursive = FALSE, full.names = FALSE))
+slides_dir <- 'slides'
+
+tocopy <- c(list.files(slides_dir, pattern = '.html'),
+			list.dirs(slides_dir, recursive = FALSE, full.names = FALSE))
 ignore <- c('draft')
 for(i in tocopy) {
-	from <- paste0('Slides/', i)
-	# to <- paste0('docs/slides/', i)
-	# cat(paste0('Copying ', from, ' to ', to, '...\n'))
-
-	# success <- FALSE
-	# if(i %in% ignore) {
-	# 	cat(paste0('Ignoring ', i, '...\n'))
-	# 	success <- TRUE
-	# } else if(!file_test("-f", from)) { # Directory
-	# 	dir.create(to, recursive = TRUE, showWarnings = FALSE)
-	# 	success <- file.copy(from, 'docs/slides/', recursive = TRUE, overwrite = TRUE)
-	# } else { # File
-	# 	success <- file.copy(from, to, overwrite = TRUE)
-	# }
-	# if(!success) {
-	# 	cat(paste0('ERROR: ', i, ' did not copy!\n'))
-	# }
+	from <- paste0(slides_dir, '/', i)
 
 	if(tolower(tools::file_ext(from)) == 'html') {
 		pdf <- paste0(tools::file_path_sans_ext(from), '.pdf')
@@ -26,22 +12,20 @@ for(i in tocopy) {
 		build_pdf <- !file.exists(pdf) | file.info(from)$mtime > file.info(pdf)$mtime
 
 		if(build_pdf) {
-			wd <- setwd('Slides/')
+			# wd <- setwd('Slides/')
 			tryCatch({
 				# renderthis::to_pdf(i,
 				# 				   complex_slides = TRUE,
 				# 				   partial_slides = FALSE)
-				pagedown::chrome_print(i,
-									   basename(pdf),
+				pagedown::chrome_print(paste0(slides_dir, '/', i),
+									   paste0(slides_dir, '/', basename(pdf)),
 									   timeout = 120)
 			}, error = function(e) {
 				cat(paste0('Error generating PDF from ', from))
 				print(e)
-			}, finally = { setwd(wd) })
+			}, finally = {
+				# setwd(wd)
+			})
 		}
-
-		# if(file.exists(pdf)) { # Copy PDF to docs directory
-		# 	file.copy(pdf, paste0('docs/slides/', basename(pdf)))
-		# }
 	}
 }

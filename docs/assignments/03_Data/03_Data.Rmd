@@ -1,0 +1,16 @@
+---
+title: "Data Importing"
+name: "YOUR NAME"
+output:
+  pdf_document: default
+editor_options:
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(kableExtra)
+```
+
+
+
