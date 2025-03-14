@@ -29,10 +29,9 @@ for(i in pkgs) {
 	}
 }
 
-for(i in github_pkgs) {
-	pkg <- strsplit(i, '/')[[1]][2]
-	if(!require(pkg)) {
-		remotes::install_github(i)
-	}
-}
-
+# for(i in github_pkgs) {
+# 	pkg <- strsplit(i, '/')[[1]][2]
+# 	if(!require(pkg)) {
+# 		remotes::install_github(i)
+# 	}
+# }
