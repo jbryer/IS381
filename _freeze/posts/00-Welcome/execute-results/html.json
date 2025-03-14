@@ -1,0 +1,15 @@
+{
+  "hash": "54c7115bf9fd7a7188b53c3d084ec265",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Welcome to IS381!\"\nauthor: \"Jason Bryer\"\ndate: \"2025-03-13\"\nimage: \"00-welcome.png\"\ndescription: \"Important information on how to get started with this course. Please read this post carefully.\"\n---\n\n::: {.cell}\n\n:::\n\n\n\n\n\nWelcome to IS38! Couple of important notes as you get started:\n\n* Complete this [Google Form]() as soon as possible. I will use some of the data (in aggregate) in the meetup.\n\n* [Join the Slack channel by clicking here]() (or use your @sps.cuny.edu email address). This will be our primary mode of communication. \n\n* For private communications, you can either send private Slack messages or email me at [jason.bryer@cuny.edu,](mailto:jason.bryer@cuny.edu?subject=DATA606).\n\n* Complete the self-regulated learning assessment in DAACS. Visit [cuny.daacs.net](https://cuny.daacs.net) and sign-in using your CUNY acocunt.\n\n* Our Meetups will be on XXX from X:00pm to X:00pm. **I expect everyone to attend or watch the Meetups.** Important information will be shared during the meetups that will not be available in any other format.\n\nI am looking forward to getting to know everyone and a fantastic semester! Good luck!\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

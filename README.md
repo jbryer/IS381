@@ -1,11 +1,7 @@
 
-``` r
-source('config.R')
-```
-
 ## IS381 Statistics and Probability with R
 
-#### Instructions for setting course site for new semester
+### Instructions for setting course site for new semester
 
 1.  Update [\_quarto.yml](_quarto.yml) website configuration file.
 
@@ -32,7 +28,7 @@ sticker(
 )
 ```
 
-#### Useful links
+### Useful links
 
-[CUNY branding
-guidelines](https://www.cuny.edu/wp-content/uploads/sites/4/page-assets/about/administration/offices/communications-marketing/university-identity/campus-logos/28283961_2-CUNY-SPS-Style-guide_110221_onepgr-2.pdf)
+- [CUNY branding
+  guidelines](https://www.cuny.edu/wp-content/uploads/sites/4/page-assets/about/administration/offices/communications-marketing/university-identity/campus-logos/28283961_2-CUNY-SPS-Style-guide_110221_onepgr-2.pdf)
