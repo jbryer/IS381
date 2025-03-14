@@ -37,14 +37,13 @@ sticker(
     the email address in [`_quarto.yml`](_quarto.yml) as well as
     [`instructor.qmd`](instructor.qmd).
 
-6.  You have to publish the initial website by executing the command
-    below in the terminal. This will create the `gh-pages` branch. The
-    Github Action will run automically on subsequent pushes to the
-    repository. *Note that this may take a while to complete, be
-    patient.*
+6.  Update welcome announcement:
+    [`posts/00-Welcome.qmd`](posts/00-Welcome.qmd)
+
+7.  
 
 ``` bash
-quarto publish gh-pages
+quarto render
 ```
 
 ### Useful links

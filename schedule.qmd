@@ -16,7 +16,7 @@ slides_uri <- '/slides/'
 
 column_mapping <- list(
 	Prepare = icons::fontawesome('readme'),
-	Slides = icons::fontawesome('chalkboard-teacher'),
+	# Slides = icons::fontawesome('chalkboard-teacher'),
 	Video = icons::fontawesome('youtube'),
 	Homework = icons::fontawesome('edit'),
 	Lab = icons::fontawesome('flask')
@@ -28,18 +28,18 @@ schedule <- readxl::read_excel('Schedule.xlsx') |> as.data.frame()
 
 # schedule$Start <- format(schedule$Start, '%a, %b %d')
 
-# slides <- !is.na(schedule$Slides)
-# if(sum(slides) > 0) {
-# 	slide_links <- paste0(
-# 		'<a href="', slides_uri, schedule[slides,]$Slides, '.html">', 
-# 		icons::fontawesome('safari'), '</a>',
-# 		'&nbsp;&nbsp;',
-# 		'<a href="', slides_uri, schedule[slides,]$Slides, '.pdf">', 
-# 		icons::fontawesome('file-pdf'), '</a>'
-# 	)
-# 	slide_links <- gsub('\\n', '', slide_links)
-# 	schedule[slides,]$Slides <- slide_links
-# }
+slides <- !is.na(schedule$Slides)
+if(sum(slides) > 0) {
+	slide_links <- paste0(
+		'<a href="', slides_uri, schedule[slides,]$Slides, '.html" target="_blank" style="text-decoration:none;">',
+		icons::fontawesome('safari'), '</a>',
+		'&nbsp;&nbsp;',
+		'<a href="', slides_uri, schedule[slides,]$Slides, '.pdf" target="_blank" style="text-decoration:none;">',
+		icons::fontawesome('file-pdf'), '</a>'
+	)
+	slide_links <- gsub('\\n', '', slide_links)
+	schedule[slides,]$Slides <- slide_links
+}
 
 for(i in names(column_mapping)) {
 	if(i %in% names(schedule)) {
@@ -58,7 +58,7 @@ for(i in names(column_mapping)) {
 schedule |>
 	knitr::kable(format = 'html',
 				 escape = FALSE, 
-				 align = c('c', 'l', 'l', 'l', rep('c', ncol(schedule) - 4))) |>
+				 align = c('c', 'l', 'l', 'l', 'l', rep('c', ncol(schedule) - 5))) |>
 	kableExtra::column_spec(column = which(names(schedule) == 'Topic'),
 							width_min = '300px') |>
 	# kableExtra::column_spec(column = which(names(schedule) == 'Start'),
