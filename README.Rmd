@@ -13,6 +13,10 @@ source('config.R')
 
 ## IS381 Statistics and Probability with R
 
+```{r, echo=FALSE}
+
+```
+
 ### Instructions for setting up the course site for a new semester
 
 1. Clone this repository. I suggest cloning it into a repository with the following format: `IS381-YEAR-SEMESTER`

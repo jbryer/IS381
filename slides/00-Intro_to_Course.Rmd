@@ -1,0 +1,264 @@
+---
+title: "Introduction to IS 381"
+subtitle: "Statistics and Probability with R"
+author: Jason Bryer, Ph.D.
+date: "Fall 2025"
+output:
+  xaringan::moon_reader:
+    css: ["assets/mtheme_max.css", "assets/fonts_mtheme_max.css"]
+    lib_dir: libs
+    seal: false
+    nature:
+      highlightStyle: solarized-light
+      highlightLanguage: R
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      navigation:
+        scroll: false
+    includes:
+      in_header: [assets/header.html]
+      after_body: [assets/insert-logo.html]
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include = FALSE}
+# Cartoons from https://github.com/allisonhorst/stats-illustrations
+# dplyr based upon https://allisonhorst.shinyapps.io/dplyr-learnr/#section-welcome
+
+source('../config.R')
+```
+
+class: center, middle, inverse, title-slide
+
+# `r metadata$title`
+## `r metadata$subtitle`
+### `r metadata$author`
+### `r metadata$date`
+
+
+---
+# Agenda
+
+* About your instructor
+* Syllabus
+* Class meetups
+* Course Schedule
+* Assignments (how you will be graded)
+	* Participation
+	* Labs
+	* Data Project
+	* Exams
+* Software
+	* The `DATA606` R Package
+	* Using R Markdown
+
+---
+
+# A little about me...
+
+* Assistant Professor at CUNY in Data Science and Information Systems
+
+* Principal Investigator for a Department of Education Grant to develop and test the Diagnostic Assessment and Achievement of College Skills ([www.DAACS.net](http://www.daacs.net))  
+
+* Authored over a dozen R packages including:
+	* [likert](http://github.com/jbryer/likert)
+	* [ShinyQDA](http://github.com/jbryer/ShinyQDA)
+	* [DTedit](http://github.com/jbryer/DTedit)
+	* [login](http://github.com/jbryer/login)
+
+* Specialize in propensity score methods. Three new methods/R packages developed include:
+	* [multilevelPSA](http://github.com/jbryer/multilevelPSA)
+	* [TriMatch](http://github.com/jbryer/TriMatch)
+	* [PSAboot](http://github.com/jbryer/PSAboot)
+
+---
+
+# Also a Father...
+
+```{r, out.width='65%', fig.align='center', echo=FALSE}
+knitr::include_graphics('images/BoysFall2019.jpg')
+```
+
+---
+
+# Runner...
+
+<table border='0' width='100%'><tr><td>
+<center><img src='images/2025DisneyMarathon.jpeg' height='450'></center>
+</td><td>
+<center><img src='images/2019NYCMarathon.jpg' height='450'></center>
+</td></tr></table>
+
+---
+
+# And photographer.
+
+```{r, out.width='80%', fig.align='center', echo=FALSE}
+knitr::include_graphics('images/Sleeping_Empire.jpg')
+```
+
+---
+
+# Syllabus `r hexes(c('blogdown', 'rmarkdown'))`
+
+Syllabus and course materials are here: [https://`r paste0(tolower(semester), year)`.data606.net](https://`r paste0(tolower(semester), year)`.data606.net)
+
+The site is built using [Quarto](https://quarto.org) and hosted on [Github](https://github.com/jbryer/`r github_repo`). Each page of the site has a "Edit this page" link at the bottom right, use that to start a pull request on Github.
+
+We will use Brightspace primary for submitting assignments only. Please submit a PDF.
+
+PDFs are preferred for the homework as there is some LaTeX formatting in the R markdown files. The `tineytex` R package helps with install LaTeX, but you can also install LaTeX using [MiKTeX](http://miktex.org) (for Windows) and [BasicTeX](http://www.tug.org/mactex/morepackages.html) (for Mac) See this page for more information: 
+https://`r paste0(tolower(semester), year)`.data606.net/course-overview/software/
+
+---
+class: font90
+
+# Meetups
+
+We will have meetups on Wednesday evenings at 8:00pm. 
+
+Meetups will be recorded and made available the next day on the [course website](https://spring2024.data606.net/course-overview/meetups/).
+
+Though attending live is not strictly required, **I expect everyone to watch the lectures during the week.** I use the class meetups to convey important information and announcements. Very often I will cover some topics not in the textbook. Students who attend the meetups tend to do well on the assignments.
+
+**One Minute Papers** - Complete the one minute paper after each Meetup (whether you watch live or watch the recordings). It should take approximately one to two minutes to complete. This allows me to 1) verify you have attended/watch the meetup and 2) get feedback about what you learned and what you may still be unclear.
+
+.font60[
+
+**Please note:** *Students who participate in this class with their camera on or use a profile image are agreeing to have their video or image recorded solely for the purpose of creating a record for students enrolled in the class to refer to, including those enrolled students who are unable to attend live. If you are unwilling to consent to have your profile or video image recorded, be sure to keep your camera off and do not use a profile image. Likewise, students who un-mute during class and participate orally are agreeing to have their voices recorded. If you are not willing to consent to have your voice recorded during class, you will need to keep your mute button activated and communicate exclusively using the "chat" feature, which allows students to type questions and comments live.* [Click here for CUNY's camera use policy](https://www.cuny.edu/wp-content/uploads/sites/4/page-assets/academics/faculty-affairs/Camera-Use-Guidance-for-Online-and-Hybrid-Courses_FINAL-JUNE-20-2024.pdf)
+
+]
+
+---
+
+# Schedule
+
+```{r schedule-setup, echo=FALSE, warning=FALSE, message=FALSE}
+# devtools::install_github("gadenbuie/ggweekly")
+library(ggweekly)
+library(rlang) # Needed for the ggweekly.R script to work
+library(configr)
+library(ggplot2)
+library(readxl)
+library(lubridate)
+# library(kableExtra)
+
+options(knitr.kable.NA = '')
+
+palette <- c('#8dd3c7','#ffffb3','#bebada','#fb8072','#80b1d3','#fdb462',
+			 '#b3de69','#fccde5','#d9d9d9','#bc80bd','#ccebc5','#ffed6f')
+
+lastModified <- format(file.info('../Schedule.xlsx')[1,]$mtime, '%B %d, %Y %I:%M%p')
+
+options(knitr.kable.NA = '')
+readxl::read_excel('../Schedule.xlsx') |>
+	dplyr::select(Week, Topic) |>
+	knitr::kable(row.names = FALSE, align = c('l','l')) |>	
+	kableExtra::column_spec(column = 1, width_max = '20px') 
+
+```
+
+---
+
+# Textbooks `r hexes(c('openintro'))`
+
+.pull-left[
+
+Diez, D.M., Barr, C.D., & Çetinkaya-Rundel, M. (2019). *OpenIntro Statistics (4th Ed)*.
+
+.font70[
+
+This will be our primary textbook for most of the semesters. Our goal is to cover all the chapters.
+
+
+]
+
+.center[
+
+<a href = "https://github.com/jbryer/DATA606spring2024/blob/master/Resources/Textbooks/os4.pdf"><img src = 'images/openintro.jpeg' alt = 'Open Intro Statistics' height = '375px' /></a>
+
+]
+
+]
+
+.pull-right[
+
+Navarro, D. (2018, version 0.6). *Learning Statistics with R*
+
+.font70[
+
+This textbooks has a chapter on Bayesian analysis that we will use at the end of the semester. 
+
+]
+
+.center[
+
+<a href = "https://github.com/jbryer/DATA606spring2024/blob/master/Resources/Textbooks/lsr-0.6.pdf"><img src = 'images/lsr.png' alt = 'Learning Statistics with R' height = '375px' /></a>
+
+]
+
+]
+
+---
+
+# Assignments
+
+
+---
+
+# Communication
+
+* Slack Channel: `r slack_link`
+	* [Click here to join the group](`r slack_invite_link`)
+
+* Email: [jason.bryer@cuny.edu](mailto:jason.bryer@cuny.edu)
+
+* Phone/Zoom: Please email to schedule a time to meet.
+
+* Office hours by appointment.
+
+---
+
+# Software `r hexes(c('rmarkdown', 'RStudio', 'tinytex'))`
+
+This is an applied statistics course so we will make extensive use of the [R statistical programming language](https://www.r-project.org).
+
+Install [R](https://cran.r-project.org) and [RStudio](https://rstudio.com) on your own computer. I encourage everyone to do this at some point by the end of the semester. I have instructions on the course website here: https://`r paste0(tolower(semester), year)`.data606.net/course-overview/software/
+
+You will also need to have [LaTeX](https://www.latex-project.org) installed as well in order to create PDFs. The [`tinytex`](https://yihui.org/tinytex/) R package helps with this process:
+
+```
+install.packages('tinytex')
+tinytex::install_tinytex()
+```
+
+
+---
+# Next steps... `r hexes(c('DAACS'))`
+
+Before XXX (XXX):
+
+* Complete this Google form: `r formative_assessment`
+* Go to https://cuny.daacs.net and complete the self-regulated learning assessment
+* [Join the Slack channel](`r slack_invite_link`)
+
+Then:
+
+* Start Lab 1 (due XXX)
+
+---
+class: inverse, right, middle, hide-logo
+
+<!--img src="images/hex/DATA606.png" width="150px"/-->
+
+# Good luck with the semester!
+
+[`r icons::fontawesome("paper-plane")` jason.bryer@cuny.edu](mailto:jason.bryer@cuny.edu)  
+[`r icons::fontawesome("slack")` `r gsub('https://', '', slack_link)`](`r slack_link`)  
+[`r icons::fontawesome("github")` @jbryer](https://github.com/jbryer)  
+[`r icons::fontawesome('mastodon')` @jbryer@vis.social](https://vis.social/@jbryer)  
+[`r icons::fontawesome("link")` `r paste0(tolower(semester), year, '.data606.net')`](https://`r paste0(tolower(semester), year, '.data606.net')`)   
+
+
