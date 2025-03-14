@@ -1,5 +1,5 @@
 # This script is used for the Github action for building the course site. However, it is useful
-# for install the required R packages for this course.
+# for install the required R packages for this course locally as well.
 
 pkgs <- c(
 	'cowplot',
@@ -29,7 +29,7 @@ for(i in pkgs) {
 	}
 }
 
-for(i in pkgs) {
+for(i in github_pkgs) {
 	pkg <- strsplit(i, '/')[[1]][2]
 	if(!require(pkg)) {
 		remotes::install_github(i)
