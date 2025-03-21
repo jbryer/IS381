@@ -683,7 +683,7 @@
     "href": "modules/01-Module.html#additional-resources",
     "title": "Introduction to R and RStudio",
     "section": "Additional Resources",
-    "text": "Additional Resources",
+    "text": "Additional Resources\n\nThis talk by Jenny Bryan from the 2020 RStudio::conf provides some great advise and strategies on how to handle errors in R.",
     "crumbs": [
       "Topics",
       "1 - Introduction to R and RStudio"

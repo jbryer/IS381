@@ -18,3 +18,6 @@ R for Data Science [introduction](https://r4ds.hadley.nz/intro.html) and [chapte
 
 {{< video https://www.youtube.com/watch?v=kfcX5DEMAp4&t=36s >}}
 
+This talk by [Jenny Bryan](https://jennybryan.org) from the 2020 RStudio::conf provides some great advise and strategies on how to handle errors in R.
+
+{{< video https://www.youtube.com/watch?v=vgYS-F8opgE >}}
